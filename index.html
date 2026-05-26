@@ -2,6 +2,14 @@
 <html lang="ko">
 <head>
 <meta charset="UTF-8">
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-6232DS34PX"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-6232DS34PX');
+</script>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>도쿄 숙소 위치 추천 | 롯폰기·신주쿠·긴자 직접 숙박 후기</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -792,6 +800,28 @@
       var id = el.id.replace('slider-','');
       if (Math.abs(dx) > 40) slidePhoto(id, dx < 0 ? 1 : -1);
     });
+  });
+</script>
+
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+    document.querySelectorAll('.book-btn').forEach(function(btn) {
+      btn.addEventListener('click', function() {
+        gtag('event', 'click_booking', {
+          'event_category': '예약버튼',
+          'event_label': btn.textContent.trim().replace(' →','')
+        });
+      });
+    });
+    var blogBtn = document.querySelector('.course2-btn');
+    if (blogBtn) {
+      blogBtn.addEventListener('click', function() {
+        gtag('event', 'click_blog', {
+          'event_category': '블로그링크',
+          'event_label': '도쿄여행코스총정리'
+        });
+      });
+    }
   });
 </script>
 
